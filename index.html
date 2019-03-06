@@ -20,14 +20,14 @@
     function updateClock() {
       newDate = new Date();
       newStamp = newDate.getTime();
-      var diff = Math.round((newStamp-startStamp)/1000);
+      var diff = Math.round((startStamp - newStamp)/1000);
 
       const d = Math.floor(diff/(24*60*60));
-      diff = diff-(d*24*60*60);
+      diff = diff - (d*24*60*60);
       const h = Math.floor(diff/(60*60));
-      diff = diff-(h*60*60);
+      diff = diff - (h*60*60);
       const m = Math.floor(diff/(60));
-      diff = diff-(m*60);
+      diff = diff - (m*60);
       const s = diff;
 
       container.innerHTML = d+" day(s), "+h+":"+m+":"+s;
